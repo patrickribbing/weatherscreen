@@ -15,14 +15,14 @@
  
 case "$1" in
 start)
-echo "Starting weatherstation"
+echo "Starting weatherscreen"
 # run the program you want to start
-/home/pi/src/run.sh &
+/home/pi/run.sh &
 ;;
 stop)
-echo "Stopping weatherstation"
+echo "Stopping weatherscreen"
 # end the program you want to stop
-killall weather.py
+killall weatherscreen.py
 ;;
 *)
  echo "Usage: /etc/init.d/weather {start|stop}"
