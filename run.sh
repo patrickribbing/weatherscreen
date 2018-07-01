@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "Starting weather...."
+echo "Starting weatherscreen...."
 cd /home/pi/src
-./weather.py
+./weatherscreen.py
 
