@@ -1,0 +1,31 @@
+#! /bin/sh
+# /etc/init.d/weather
+ 
+### BEGIN INIT INFO
+# Provides:          weather
+# Required-Start:    $remote_fs $syslog
+# Required-Stop:     $remote_fs $syslog
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: start a program from boot
+# Description:       A simple script  which will start a program from boot and stop upon shut-down
+### END INIT INFO
+ 
+# Put any commands you always want to run here.
+ 
+case "$1" in
+start)
+echo "Starting weatherstation"
+# run the program you want to start
+/home/pi/src/run.sh &
+;;
+stop)
+echo "Stopping weatherstation"
+# end the program you want to stop
+killall weather.py
+;;
+*)
+ echo "Usage: /etc/init.d/weather {start|stop}"
+ exit 1
+ ;;
+esac
